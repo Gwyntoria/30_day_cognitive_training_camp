@@ -5,7 +5,7 @@ import subprocess
 import shutil
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-VERSION = "1.2"
+VERSION = "1.3"
 
 
 def is_year_dir(name: str) -> bool:
@@ -88,7 +88,7 @@ def main():
 
     # 构建pandoc命令
     metadata_file = os.path.join(BASE_DIR, "metadata.yaml")
-    css_file = os.path.join(BASE_DIR, "epub.css")
+    css_file = os.path.join(BASE_DIR, "style.css")
 
     pandoc_cmd = [
         "pandoc",
@@ -99,6 +99,7 @@ def main():
         "--top-level-division=chapter",
         "--css",
         css_file,
+        "--split-level=2",
         "-o",
         output_file,
         merged_path,
