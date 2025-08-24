@@ -1,0 +1,80 @@
+/* 全局字体和排版 */
+body {
+    font-family: serif;
+    /* Kindle 会替换成自带字体 */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0 5%;
+    font-size: 1em;
+    color: #000;
+    background: #fff;
+}
+
+/* 一级标题 - 居中 */
+h1 {
+    font-size: 1.6em;
+    text-align: center;
+    margin: 2em 0 1em 0;
+    font-weight: bold;
+}
+
+/* 二级标题 - 左对齐 */
+h2 {
+    font-size: 1.3em;
+    margin: 1.5em 0 0.8em 0;
+    font-weight: bold;
+    border-bottom: 1px solid #999;
+    padding-bottom: 0.2em;
+}
+
+/* 三级标题 */
+h3 {
+    font-size: 1.1em;
+    margin: 1em 0 0.5em 0;
+    font-weight: bold;
+    color: #da8282;
+}
+
+/* 正文段落 */
+p {
+    margin: 0.7em 0;
+    text-indent: 0em;
+    /* 首行缩进 */
+    text-align: justify;
+}
+
+/* 引用 */
+blockquote {
+    margin: 1em 1.5em;
+    padding: 0.5em 1em;
+    border-left: 3px solid #666;
+    font-style: italic;
+    color: #444;
+}
+
+/* 列表 */
+ul,
+ol {
+    margin: 0.6em 0 0.6em 2em;
+    padding: 0;
+}
+
+/* 图片 */
+img {
+    display: block;
+    margin: 1em auto;
+    max-width: 100%;
+}
+
+/* 脚注 */
+.footnote {
+    font-size: 0.85em;
+    color: #565656;
+}
+
+/* 分隔线 */
+hr {
+    border: none;
+    border-top: 1px solid #aaa;
+    margin: 1.5em 0;
+}
