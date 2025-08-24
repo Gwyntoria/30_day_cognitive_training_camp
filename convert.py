@@ -29,7 +29,7 @@ def main():
 
     with open(merged_path, "w", encoding="utf-8") as out:
         for year in year_dirs:
-            out.write(f"# {year}\n\n")
+            out.write(f"# 30天认知训练营·{year}\n\n")
             year_path = os.path.join(BASE_DIR, year)
             files = sorted(os.listdir(year_path))
             for f in files:

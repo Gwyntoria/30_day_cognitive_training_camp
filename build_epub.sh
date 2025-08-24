@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e  # 出错时退出
 
-VERSION="1.0"
+VERSION="1.1"
 
 # 工作目录
 WORKDIR="$(cd "$(dirname "$0")" && pwd)"
@@ -42,6 +42,7 @@ pushd "$MERGED_DIR" > /dev/null
 pandoc \
   --metadata-file=../metadata.yaml \
   --toc --toc-depth=3 \
+  --top-level-division=chapter \
   --css=../epub.css \
   -o "../$OUTPUT_DIR/$OUTPUT_FILE" \
   "$MERGED_FILE"
