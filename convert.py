@@ -5,7 +5,7 @@ import subprocess
 import shutil
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-VERSION = "1.3"
+VERSION = "1.4"
 
 
 def is_year_dir(name: str) -> bool:
