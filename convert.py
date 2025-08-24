@@ -5,7 +5,7 @@ import subprocess
 import shutil
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-VERSION = "1.4"
+VERSION = "1.5"
 
 
 def is_year_dir(name: str) -> bool:
@@ -19,7 +19,7 @@ def increase_headings(content: str) -> str:
     for line in lines:
         if line.startswith("#"):
             # 在标题前添加一个#，增加一级
-            line = "#" + line
+            line = "##" + line
         new_lines.append(line)
     return "\n".join(new_lines)
 
@@ -35,6 +35,7 @@ def add_page_breaks(content: str) -> str:
         r"^(# .+)$",  # 一级标题
         r"^(## .+)$",  # 二级标题
         r"^(### .+)$",  # 三级标题
+        r"^(#### .+)$",  # 四级标题
     ]
 
     for pattern in patterns:
@@ -67,7 +68,7 @@ def main():
 
     merged_content = ""
     for year in year_dirs:
-        merged_content += f"# 30天认知训练营·{year}\n\n"
+        merged_content += f"## 30天认知训练营·{year}\n\n"
         year_path = os.path.join(BASE_DIR, year)
         files = sorted(os.listdir(year_path))
         for f in files:
@@ -95,11 +96,11 @@ def main():
         "--metadata-file",
         metadata_file,
         "--toc",
-        "--toc-depth=3",
+        "--toc-depth=4",
         "--top-level-division=chapter",
         "--css",
         css_file,
-        "--split-level=2",
+        "--split-level=3",
         "-o",
         output_file,
         merged_path,
