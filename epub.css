@@ -1,4 +1,6 @@
-/* 全局字体和排版 */
+/* =========================
+   全局字体和排版
+========================= */
 body {
     font-family: serif;
     /* Kindle 会替换成自带字体 */
@@ -10,32 +12,56 @@ body {
     background: #fff;
 }
 
-/* 一级标题 - 居中 */
+/* =========================
+   一级标题 - 居中，每页新起
+========================= */
 h1 {
-    font-size: 1.6em;
+    font-size: 1.7em;
     text-align: center;
-    margin: 2em 0 1em 0;
+    margin: 5em 0 5em 0;
     font-weight: bold;
+    page-break-before: always;
+    break-before: page;
 }
 
-/* 二级标题 - 左对齐 */
+/* =========================
+   二级标题 - 左对齐，每页新起
+========================= */
 h2 {
-    font-size: 1.3em;
+    font-size: 1.5em;
     margin: 1.5em 0 0.8em 0;
     font-weight: bold;
     border-bottom: 1px solid #999;
     padding-bottom: 0.2em;
+    page-break-before: always;
+    break-before: page;
 }
 
-/* 三级标题 */
+/* =========================
+   三级标题 - 左对齐，每页新起
+========================= */
 h3 {
-    font-size: 1.1em;
+    font-size: 1.3em;
     margin: 1em 0 0.5em 0;
     font-weight: bold;
-    color: #da8282;
+    border-bottom: 1px solid #999;
+    color: #7c3b3b;
+    page-break-before: always;
+    break-before: page;
 }
 
-/* 正文段落 */
+/* =========================
+   四级标题 - 左对齐，每页新起
+========================= */
+h4 {
+    font-size: 1.1em;
+    margin: 0.8em 0 0.5em 0;
+    font-weight: bold;
+}
+
+/* =========================
+   正文段落
+========================= */
 p {
     margin: 0.7em 0;
     text-indent: 0em;
@@ -43,7 +69,9 @@ p {
     text-align: justify;
 }
 
-/* 引用 */
+/* =========================
+   引用
+========================= */
 blockquote {
     margin: 1em 1.5em;
     padding: 0.5em 1em;
@@ -52,29 +80,48 @@ blockquote {
     color: #444;
 }
 
-/* 列表 */
+/* =========================
+   列表
+========================= */
 ul,
 ol {
     margin: 0.6em 0 0.6em 2em;
     padding: 0;
 }
 
-/* 图片 */
+/* =========================
+   图片
+========================= */
 img {
     display: block;
     margin: 1em auto;
     max-width: 100%;
 }
 
-/* 脚注 */
+/* =========================
+   脚注
+========================= */
 .footnote {
     font-size: 0.85em;
     color: #565656;
 }
 
-/* 分隔线 */
+/* =========================
+   分隔线
+========================= */
 hr {
     border: none;
     border-top: 1px solid #aaa;
     margin: 1.5em 0;
+}
+
+/* =========================
+   避免孤行和寡行（可选）
+========================= */
+p,
+blockquote,
+ul,
+ol {
+    orphans: 2;
+    widows: 2;
 }
