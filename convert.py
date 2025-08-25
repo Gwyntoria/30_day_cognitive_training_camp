@@ -5,7 +5,7 @@ import subprocess
 import shutil
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-VERSION = "1.6"
+VERSION = "1.6.1"
 
 
 def is_year_dir(name: str) -> bool:
@@ -32,7 +32,7 @@ def add_page_breaks(content: str) -> str:
     # 在一级、二级、三级标题前添加分页符
     # 使用正则表达式匹配标题行
     patterns = [
-        r"^(# .+)$",  # 一级标题
+        # r"^(# .+)$",  # 一级标题
         r"^(## .+)$",  # 二级标题
         r"^(### .+)$",  # 三级标题
         r"^(#### .+)$",  # 四级标题
@@ -67,6 +67,7 @@ def main():
     year_dirs = sorted([d for d in os.listdir(BASE_DIR) if is_year_dir(d)])
 
     merged_content = ""
+    merged_content += "# 王烁·认知训练\n\n"
     for year in year_dirs:
         merged_content += f"## 30天认知训练营·{year}\n\n"
         year_path = os.path.join(BASE_DIR, year)
