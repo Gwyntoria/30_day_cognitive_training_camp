@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
 import os
 import re
-import subprocess
 import shutil
+import subprocess
+
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-VERSION = "1.6.1"
+
+MAJOR_VERSION = 1
+MINOR_VERSION = 6
+PATCH_VERSION = 2
+
+VERSION = f"{MAJOR_VERSION}.{MINOR_VERSION}.{PATCH_VERSION}"
 
 
 def is_year_dir(name: str) -> bool:
